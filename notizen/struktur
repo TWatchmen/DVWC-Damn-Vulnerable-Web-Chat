@@ -1,0 +1,87 @@
+damn-vulnerable-web-chat/
+│
+├── README.md
+├── LICENSE
+├── requirements.txt
+├── run.py
+├── config.py
+├── .gitignore
+│
+├── app/
+│   ├── __init__.py
+│   ├── routes.py
+│   ├── models.py
+│   ├── database.py
+│   ├── auth.py
+│   │
+│   ├── templates/
+│   │   ├── base.html
+│   │   ├── index.html
+│   │   ├── login.html
+│   │   ├── register.html
+│   │   ├── dashboard.html
+│   │   ├── chat.html
+│   │   ├── profile.html
+│   │   └── admin.html
+│   │
+│   ├── static/
+│   │   ├── css/
+│   │   │   ├── style.css
+│   │   │   └── admin.css
+│   │   │
+│   │   ├── js/
+│   │   │   ├── chat.js
+│   │   │   ├── login.js
+│   │   │   └── websocket.js
+│   │   │
+│   │   └── images/
+│   │
+│   └── uploads/
+│
+├── database/
+│   ├── init.sql
+│   └── chat.db
+│
+├── vulnerable/
+│   ├── xss/
+│   │   ├── stored.py
+│   │   ├── reflected.py
+│   │   └── dom.html
+│   │
+│   ├── sqli/
+│   │   ├── login.py
+│   │   └── search.py
+│   │
+│   ├── csrf/
+│   │   └── transfer.py
+│   │
+│   ├── idor/
+│   │   └── profile.py
+│   │
+│   ├── fileupload/
+│   │   └── upload.py
+│   │
+│   ├── command/
+│   │   └── ping.py
+│   │
+│   ├── lfi/
+│   │   └── include.py
+│   │
+│   └── ssrf/
+│       └── fetch.py
+│
+├── php/
+│   ├── shell.php
+│   ├── upload.php
+│   ├── include.php
+│   └── test.php
+│
+├── docs/
+│   ├── installation.md
+│   ├── vulnerabilities.md
+│   └── architecture.md
+│
+└── docker/
+    ├── Dockerfile
+    ├── docker-compose.yml
+    └── nginx.conf
