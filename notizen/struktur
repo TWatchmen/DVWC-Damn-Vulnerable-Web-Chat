@@ -21,6 +21,7 @@ damn-vulnerable-web-chat/
 │   │   ├── register.html
 │   │   ├── dashboard.html
 │   │   ├── chat.html
+│   │   ├── forum.html
 │   │   ├── profile.html
 │   │   └── admin.html
 │   │
