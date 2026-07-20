@@ -9,7 +9,7 @@ def create_app():
 
     init_database()
 
-    from .routes import main
-    app.register_blueprint(main)
+    from .routes import vuln
+    app.register_blueprint(vuln)
 
     return app
