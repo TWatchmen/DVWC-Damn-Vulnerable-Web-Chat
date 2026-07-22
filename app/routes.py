@@ -1,7 +1,8 @@
 from flask import Blueprint, render_template
 
-vuln = Blueprint("vuln", __name__)
+main = Blueprint("main", __name__)
 
-@vuln.route("/")
+@main.route("/")
 def index():
+
     return render_template("index.html")
