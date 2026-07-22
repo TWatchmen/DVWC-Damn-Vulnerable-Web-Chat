@@ -9,8 +9,8 @@ def create_app():
 
     init_database()
 
-    from routes import main
-    from auth import auth
+    from .routes import main
+    from .auth import auth
     app.register_blueprint(main)
     app.register_blueprint(auth)
 
