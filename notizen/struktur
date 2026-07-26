@@ -15,7 +15,6 @@ damn-vulnerable-web-chat/
 │   ├── auth.py
 │   │
 │   ├── templates/
-│   │   ├── base.html
 │   │   ├── index.html
 │   │   ├── login.html
 │   │   ├── register.html

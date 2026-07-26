@@ -1,4 +1,4 @@
-##### Schwachstellen:
+##### Probleme:
 - sqlite statt mariadb
 
 
@@ -12,7 +12,8 @@ Die enthaltenen Schwachstellen sind bewusst implementiert, um das Verständnis f
 Nutze dieses Projekt ausschließlich in einer isolierten lokalen Testumgebung oder in autorisierten Laboren.
 
 ## Features
-Benutzerregistrierung und Login
+- Benutzerregistrierung und Login
+- Forum
 Öffentliche Chaträume
 Private Nachrichten
 Benutzerprofile
@@ -27,7 +28,8 @@ Verschiedene Sicherheitsstufen (geplant)
 | Login Brute Force       |       ⏳ |
 | Broken Access Control   |       ⏳ |
 | Session Vulnerabilities |       ⏳ |
-| Mass Assignment |       ⏳ |
+| Passwörter im Klartext  |       ⏳ |
+| Mass Assignment         |       ⏳ |
 | Stored XSS              |      	⏳ |
 | Reflected XSS           |       ⏳ |
 | DOM XSS                 |       ⏳ |
@@ -52,11 +54,11 @@ damn-vulnerable-web-chat/
 ├── docs/
 └── docker/
 ## Installation
-Repository klonen
-git clone https://github.com/<username>/damn-vulnerable-web-chat.git
-cd damn-vulnerable-web-chat
-Virtuelle Umgebung erstellen
-python -m venv .venv
+1. Repository klonen 
+   1. git clone https://github.com/TWatchmen/DVWC-Damn-Vulnerable-Web-Chat.git
+2. cd damn-vulnerable-web-chat
+   Virtuelle Umgebung erstellen
+   python -m venv .venv
 
 Linux/macOS
 
@@ -82,13 +84,17 @@ SQLite
 PHP (für ausgewählte Übungen)
 Docker
 ## Projektziel
-
-Dieses Projekt soll eine moderne, bewusst verwundbare Chat-Anwendung bereitstellen, mit der typische Web-Schwachstellen praxisnah untersucht und verstanden werden können. Ziel ist es, sowohl die Angriffsseite als auch die Umsetzung sicherer Gegenmaßnahmen nachvollziehbar zu machen.
+Das Projekt wurde von mir in meiner Freizeit geschrieben um mich selber mit Cyber Security vertraut zu machen.
+Dieses Projekt soll eine moderne, bewusst verwundbare Chat-Anwendung bereitstellen, 
+mit der typische Web-Schwachstellen praxisnah untersucht und verstanden werden können. Ziel ist es, 
+sowohl die Angriffsseite als auch die Umsetzung sicherer Gegenmaßnahmen nachvollziehbar zu machen.
 
 ## Hinweise
 Nicht produktiv einsetzen.
 Nicht auf öffentlich erreichbaren Servern betreiben.
 Nur in autorisierten Testumgebungen verwenden.
+
+
 Lizenz
 
 Dieses Projekt steht unter der in der Datei LICENSE angegebenen Lizenz.
