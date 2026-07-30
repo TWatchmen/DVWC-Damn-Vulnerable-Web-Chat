@@ -37,3 +37,23 @@ def register_db(username, password):
         print("[+] User registered")
         conn.commit()
         conn.close()
+
+def login_db(username, password):
+    conn = sqlite3.connect(DB_PATH)
+
+    try:
+        query = "SELECT * FROM users WHERE username = ? AND password = ?"
+
+        user = conn.execute(
+            query,
+            (username, password)
+        ).fetchone()
+
+        if user:
+            return True
+
+        return False
+
+    finally:
+        print("[+] User login")
+        conn.close()

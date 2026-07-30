@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>register</title>
+    <title>Register</title>
 </head>
 <body>
 <h1>Register your account</h1>
 
 <!-- Ich habe das etwas abgeändert aber deine Sache war richtig und hat funktioniert.
-Ich habe es nur etwas lesbarar gemacht und "required" eingefügt. Das heißt, dass das Fehl ausgefüllt werden muss.
+Ich habe es nur etwas lesbarar gemacht und "required" eingefügt. Das heißt, dass das Feld ausgefüllt werden muss.
 -->
 <form action="{{ url_for('auth.register') }}" method="POST">
 
@@ -23,9 +23,9 @@ Ich habe es nur etwas lesbarar gemacht und "required" eingefügt. Das heißt, da
     <p style="color: red;">{{ error }}</p>
 {% endif %}
 <p>
-    already registered?
-<a href="login.html"
-   Login
+    Already registered?
+<a href="{{ url_for('auth.login') }}">
+    <button type="button">Login</button>
 </a>
 </p>
 

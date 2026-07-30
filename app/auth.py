@@ -24,6 +24,21 @@ def register():
 
     return render_template("register.html")
 
+
 @auth.route("/login", methods=["GET", "POST"])
 def login():
-    return render_template("login.html")
+    error = None
+
+    if request.method == "POST":
+        username = request.form["username"]
+        password = request.form["password"]
+
+        success = database.login_db(username, password)
+
+        if not success:
+            error = "Wrong username or password"
+            return render_template("login.html", error=error)
+
+        return redirect(url_for("main.index"))
+
+    return render_template("login.html", error=error)
