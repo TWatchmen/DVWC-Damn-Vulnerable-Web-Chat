@@ -5,21 +5,23 @@
     <title>register</title>
 </head>
 <body>
-<h1>register</h1>
-<form>
-<label>username</label>
-<input
-type="text"
-placeholder="username"
-<br><br>
-<label>password</label>
-<input
-type="password"
-placeholder="password"
-<br><br>
-<button>register</button>
-</form>
+<h1>Register your account</h1>
 
+<!-- Ich habe das etwas abgeändert aber deine Sache war richtig und hat funktioniert.
+Ich habe es nur etwas lesbarar gemacht und "required" eingefügt. Das heißt, dass das Fehl ausgefüllt werden muss.
+-->
+<form action="{{ url_for('auth.register') }}" method="POST">
+
+    <input type="text" name="username" placeholder="Benutzername" required>
+
+    <input type="password" name="password" placeholder="Passwort" required>
+
+    <button type="submit">Register</button>
+
+</form>
+{% if error %}
+    <p style="color: red;">{{ error }}</p>
+{% endif %}
 <p>
     already registered?
 <a href="login.html"
