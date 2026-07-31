@@ -27,15 +27,17 @@ def register_db(username, password):
         query = "INSERT INTO users (username, password) VALUES ('" + username + "', '" + password + "')"
         conn.execute(query)
 
-        conn.commit()
-        return True
+        if sqlite3.IntegrityError():
+            return False
+        else:
+            conn.commit()
+            return True
 
     except sqlite3.IntegrityError:
         return False
 
     finally:
         print("[+] User registered")
-        conn.commit()
         conn.close()
 
 def login_db(username, password):
@@ -44,15 +46,11 @@ def login_db(username, password):
     try:
         query = "SELECT * FROM users WHERE username = ? AND password = ?"
 
-        user = conn.execute(
-            query,
-            (username, password)
-        ).fetchone()
-
+        user = conn.execute(query,(username, password)).fetchone()
         if user:
             return True
-
-        return False
+        else:
+            return False
 
     finally:
         print("[+] User login")

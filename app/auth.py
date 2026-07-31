@@ -19,10 +19,10 @@ def register():
         if not success:
             error = "Username already exists"
             return render_template("register.html", error=error)
-        else:
-            return redirect(url_for("main.index"))
 
-    return render_template("register.html")
+        return redirect(url_for("main.index"))
+
+    return render_template("register.html", error=error)
 
 
 @auth.route("/login", methods=["GET", "POST"])
