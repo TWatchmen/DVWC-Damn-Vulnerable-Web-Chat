@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Register</title>
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
 <h1>Register your account</h1>
@@ -11,10 +12,18 @@
 Ich habe es nur etwas lesbarar gemacht und "required" eingefügt. Das heißt, dass das Feld ausgefüllt werden muss.
 -->
 <form action="{{ url_for('auth.register') }}" method="POST">
-
     <input type="text" name="username" placeholder="Username" required>
+    <br><br>
+    <input type="text" name="password" placeholder="Password" required>
+    <br><br>
 
-    <input type="password" name="password" placeholder="Password" required>
+    <label for="colors">Choose a color:</label>
+    <select name="colors" id="color">
+      <option value="grey">grey</option>
+      <option value="blue">blue</option>
+      <option value="red">red</option>
+      <option value="green">green</option>
+    </select>
 
     <button type="submit">Register</button>
 

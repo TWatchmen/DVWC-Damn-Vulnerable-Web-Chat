@@ -25,14 +25,12 @@ def register_db(username, password):
     try:
 
         query = "INSERT INTO users (username, password) VALUES ('" + username + "', '" + password + "')"
-        conn.execute(query)
-
-        if sqlite3.IntegrityError():
+        register = conn.execute(query)
+        if not register:
             return False
         else:
             conn.commit()
             return True
-
     except sqlite3.IntegrityError:
         return False
 
