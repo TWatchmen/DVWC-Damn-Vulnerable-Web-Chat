@@ -1,6 +1,25 @@
+
 body {
-    background-color: lightgrey;
     text-align: center;
+}
+
+body.blue{
+    background-color: lightblue;
+}
+
+body.red{
+    background-color: lightcoral;
+}
+
+body.green{
+    background-color: lightgreen;
+}
+
+body.grey{
+    background-color: lightgrey;
+}
+body.yellow{
+    background-color: lightyellow;
 }
 
 #chat-container { width: 400px;  background: white; padding: 20px; border-radius: 8px; }

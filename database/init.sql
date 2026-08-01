@@ -2,7 +2,7 @@ CREATE TABLE users (
     user_id INTEGER PRIMARY KEY autoincrement,
     username VARCHAR(32) UNIQUE NOT NULL,
     password VARCHAR(64) NOT NULL,
-    favourite_color VARCHAR (32),
+    color VARCHAR (32),
     is_admin BOOLEAN default false
 );
 

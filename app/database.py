@@ -1,6 +1,5 @@
 import os
 import sqlite3
-from encodings import cp437
 
 DB_PATH = "database/database.db"
 SQL_PATH = "database/init.sql"
@@ -19,12 +18,12 @@ def init_database():
 
     print("[+] Database created.")
 
-def register_db(username, password):
+def register_db(username, password, color):
     conn = sqlite3.connect(DB_PATH)
 
     try:
 
-        query = "INSERT INTO users (username, password) VALUES ('" + username + "', '" + password + "')"
+        query = "INSERT INTO users (username, password, color) VALUES ('" + username + "', '" + password + "', '" + color + "')"
         register = conn.execute(query)
         if not register:
             return False
@@ -53,3 +52,19 @@ def login_db(username, password):
     finally:
         print("[+] User login")
         conn.close()
+
+def get_user_color(username):
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+
+    user = conn.execute(
+        "SELECT color FROM users WHERE username = ?",
+        (username,)
+    ).fetchone()
+
+    conn.close()
+
+    if user:
+        return user["color"]
+
+    return "white"
